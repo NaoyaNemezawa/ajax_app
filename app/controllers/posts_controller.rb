@@ -16,13 +16,14 @@ class PostsController < ApplicationController
   end
 
   def checked
+    # binding.pry
     post = Post.find(params[:id])
     if post.checked
       post.update(checked: false)
     else
       post.update(checked: true)
     end
-# 上記の条件分岐で更新したレコードを取得する。
+    # 上記の条件分岐で更新したレコードを取得する。
     item = Post.find(params[:id])
     render json: {post: item}
   end
