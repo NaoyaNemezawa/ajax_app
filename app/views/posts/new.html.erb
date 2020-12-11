@@ -1,0 +1,9 @@
+<h1>新規投稿ページ</h1>
+
+<%= form_with url: "/posts",method: :post, local: true do |form| %>
+<%# <form action="/posts" method="post"> %>
+  <%= form.text_field :content %>
+  <%# <input type="text" name="content"> %>
+  <%= form.submit "投稿する" %>
+  <%# <input type="submit" value="投稿する"> %>
+<% end %>
